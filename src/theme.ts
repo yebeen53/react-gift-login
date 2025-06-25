@@ -188,8 +188,6 @@ const theme = {
       spacing16: '64px',
     }
   };
-
   
 export type Theme = typeof theme;
 export default theme;
-  
