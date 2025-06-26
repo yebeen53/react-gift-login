@@ -1,17 +1,22 @@
 import { useState } from 'react'
-import './App.css'
 import GlobalStyles from './emotionstyle'
 import Navibar from './navigation'
-
+import React from "react";
+import SelectCategory from "./selectCategory";
+import Banner from "./elsesection";
+import GiftRanking from "./giftRanking";
+import SelectFr from './selectFr';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <button onClick={() => setCount(count + 1)}>
-        count is {count}
-      </button>
+    <GlobalStyles/>
+    <><Navibar/></>
+    <><SelectFr/></>
+    <><SelectCategory /></>
+    <><Banner/></>
+    <GiftRanking/>
     </>
   )
 }
