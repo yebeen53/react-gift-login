@@ -1,9 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { css, Global } from '@emotion/react';
+import { useTheme } from '@emotion/react';
+import type { Theme } from './theme';
 
-const GlobalStyles = () => (
+
+
+const GlobalStyles = () => {
+  const theme = useTheme() as Theme;
+  return( 
   <Global
     styles={css`
+      /* Reset CSS */
       *, *::before, *::after {
         box-sizing: border-box;
         margin: 0;
@@ -12,11 +19,14 @@ const GlobalStyles = () => (
 
       html, body {
         height: 100%;
-        font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont,
+        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
           'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
           'Helvetica Neue', sans-serif;
-        background-color: #fff;
-        color: #111;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: ${theme.colors.semantic.backgroundDefault};
+        color:${theme.colors.semantic.textDefault};
       }
 
       a {
@@ -29,7 +39,7 @@ const GlobalStyles = () => (
       }
 
       button {
-        background: none;
+        background: grey;
         border: none;
         cursor: pointer;
         font: inherit;
@@ -39,9 +49,8 @@ const GlobalStyles = () => (
         display: block;
         max-width: 100%;
         height: auto;
+      
       }
     `}
-  />
-);
-
-export default GlobalStyles;
+  />)
+}; export default GlobalStyles;
