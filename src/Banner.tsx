@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
-import hook from './hook';
+import useHook from './hook';
 import type { Theme } from '@/theme';
+
 const containerStyle = (theme:Theme)=>css`
 background-Color: ${theme.colors.semantic.kakaoYellow};
 border-radius: 10px;
@@ -24,11 +25,12 @@ line-height: ${theme.typography.subtitle1Bold.lineHeight};
 color: ${theme.colors.semantic.textDefault};
 `;
 
-export default function Banner() {
-  const theme = hook();
+const Banner=()=> {
+  const theme = useHook();
 return (
   <div css={containerStyle(theme)}>
     <p css={textStyle(theme)}>카카오테크 캠퍼스 3기 여러분</p>
     <p css={t2Style(theme)}>프론트엔드 2단계 과제 화이팅! 🎉</p>
   </div>
 )};
+export default Banner;
