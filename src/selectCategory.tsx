@@ -1,6 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
-import type { Theme } from './theme';
+import type { Theme } from '@/theme';
 import { css } from '@emotion/react';
 
 const themes = [
