@@ -104,12 +104,12 @@ font-size: 12px;
 color: ${theme.colors.gray400};
 `;
 
-const nameStyle = (theme:Theme)=>css`
+const nameStyle = css`
 font-weight: 500;
 margin-top: 2px;
 `;
 
-const priceStyle = (theme:Theme)=>css`
+const priceStyle = css`
 font-weight: bold;
 margin-top: 4px;
 `;
@@ -156,8 +156,8 @@ const GiftRanking = () => {
             <div css={rankBadge(theme, item.id)}>{item.id}</div>
             <img src={item.image} alt={item.name} css={imageStyle(theme)} />
             <div css={brandStyle(theme)}>{item.brand}</div>
-            <div css={nameStyle(theme)}>{item.name}</div>
-            <div css={priceStyle(theme)}>{item.price.toLocaleString()} 원</div>
+            <div css={nameStyle}>{item.name}</div>
+            <div css={priceStyle}>{item.price.toLocaleString()} 원</div>
           </div>
         ))}
       </div>
