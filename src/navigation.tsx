@@ -1,11 +1,8 @@
-/** @jsxImportSource @emotion/react */
-import { css, useTheme } from '@emotion/react';
-import type { Theme } from './theme';
+import { css } from '@emotion/react';
+import type { Theme } from '@/theme';
+import hook from './hook';
 
-const Navibar = () => {
-  const theme = useTheme() as Theme;
-
-  const container = css`
+const container = (theme:Theme)=>css`
     max-width: 720px;
     height: 50px;
     background: ${theme.colors.semantic.backgroundDefault};
@@ -16,7 +13,7 @@ const Navibar = () => {
     padding: 0 16px;
   `;
 
-  const navstyle = css`
+  const navstyle = (theme:Theme)=>css`
     font-size: ${theme.typography.title1Bold.fontSize};
     font-weight: ${theme.typography.title1Bold.fontWeight};
     line-height: ${theme.typography.title1Bold.lineHeight};
@@ -44,13 +41,15 @@ const Navibar = () => {
     font-size: 25px;
   `;
 
+const Navibar = () => {
+  const theme = hook();
   return (
-    <div css={container}>
+    <div css={container(theme)}>
       <div css={pre}>
         <div css={preStyle}>&lt;</div>
       </div>
 
-      <nav css={navstyle}>선물하기</nav>
+      <nav css={navstyle(theme)}>선물하기</nav>
 
       <div css={per}></div>
     </div>
