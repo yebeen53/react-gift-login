@@ -1,12 +1,7 @@
-/** @jsxImportSource @emotion/react */
 import { css, Global } from '@emotion/react';
-import { useTheme } from '@emotion/react';
-import type { Theme } from './theme';
-
-
-
+import hook from './hook';
 const GlobalStyles = () => {
-  const theme = useTheme() as Theme;
+  const theme = hook();
   return( 
   <Global
     styles={css`
