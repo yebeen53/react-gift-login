@@ -1,10 +1,7 @@
-/** @jsxImportSource @emotion/react */
-import { css, useTheme } from '@emotion/react';
-import type { Theme } from './theme';
-import React from 'react';
-
-const SelectFr: React.FC = () => {
-  const theme = useTheme() as Theme;
+import { css} from '@emotion/react';
+import hook from './hook'
+const SelectFr = () => {
+  const theme = hook();
 
   const containerStyle = css`
     padding: ${theme.spacing.spacing4};
