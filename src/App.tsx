@@ -9,12 +9,12 @@ function App() {
 
   return (
     <>
-    <GlobalStyles/>
-    <><Navibar/></>
-    <><SelectFr/></>
-    <><SelectCategory /></>
-    <><Banner/></>
-    <GiftRanking/>
+      <GlobalStyles/>
+      <Navibar/>
+      <SelectFr/>
+      <SelectCategory />
+      <Banner/>
+      <GiftRanking/>
     </>
   )
 }

@@ -10,5 +10,5 @@ export default defineConfig({
       '@':p.resolve(__dirname,'src'),
       '@utils':p.resolve(__dirname,'src/utils'),
     }
- }
+  }
 })
