@@ -1,5 +1,5 @@
 import { css} from '@emotion/react';
-import hook from './hook'
+import useCustomTheme from './useCustomTheme'
 import type {Theme} from '@/theme'
 
 const containerStyle = (theme:Theme)=>css`
@@ -36,9 +36,8 @@ const containerStyle = (theme:Theme)=>css`
     font-size: ${theme.typography.label2Regular.fontSize};
     border-radius: 8px;
   `;
-  
 const SelectFr = () => {
-  const theme = hook();
+  const theme = useCustomTheme();
   return (
     <div css={containerStyle(theme)}>
       <div css={friendBoxStyle(theme)}>

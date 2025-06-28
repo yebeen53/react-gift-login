@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import useHook from './hook';
+import useCustomTheme from './useCustomTheme';
 import type { Theme } from '@/theme';
 
 const containerStyle = (theme:Theme)=>css`
@@ -26,7 +26,7 @@ color: ${theme.colors.semantic.textDefault};
 `;
 
 const Banner=()=> {
-  const theme = useHook();
+  const theme = useCustomTheme();
 return (
   <div css={containerStyle(theme)}>
     <p css={textStyle(theme)}>카카오테크 캠퍼스 3기 여러분</p>

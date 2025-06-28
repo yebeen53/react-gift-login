@@ -1,8 +1,8 @@
-import GlobalStyles from '@/emotionstyle';
+import GlobalStyles from '@/GlobalStyles';
 import Navibar from '@/Navibar';
-import SelectCategory from '@/selectCategory';
+import GiftThemeSection from '@/GiftThemeSection';
 import Banner from '@/Banner';
-import GiftRanking from '@/giftRanking';
+import GiftRanking from '@/GiftRanking';
 import SelectFr from '@/selectFr';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <GlobalStyles/>
       <Navibar/>
       <SelectFr/>
-      <SelectCategory />
+      <GiftThemeSection />
       <Banner/>
       <GiftRanking/>
     </>

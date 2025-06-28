@@ -1,6 +1,6 @@
 import { css} from '@emotion/react';
 import { useState } from 'react';
-import useHook from './hook';
+import useCustomTheme from './useCustomTheme';
 import type { Theme } from '@/theme';
 
 const tabs = ['전체', '여성이', '남성이', '청소년이'];
@@ -124,7 +124,7 @@ padding:5px;
 `
 
 const GiftRanking = () => {
-  const theme = useHook();
+  const theme = useCustomTheme();
   const [selectedTab, setSelectedTab] = useState('전체');
   const [selectedSubTab, setSelectedSubTab] = useState('받고 싶어한');
 

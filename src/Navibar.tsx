@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Theme } from '@/theme';
-import hook from './hook';
+import useCustomTheme from './useCustomTheme';
 
 const container = (theme:Theme)=>css`
     max-width: 720px;
@@ -42,7 +42,7 @@ const container = (theme:Theme)=>css`
   `;
 
 const Navibar = () => {
-  const theme = hook();
+  const theme = useCustomTheme();
   return (
     <div css={container(theme)}>
       <div css={pre}>
