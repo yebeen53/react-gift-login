@@ -78,7 +78,7 @@ text-align: center;
 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 `;
 
-const rankBadge = (theme:Theme,rank : number) => css`
+const rankBadge = () => css`
 position: absolute;
 top: 8px;
 left: 8px;
@@ -154,7 +154,7 @@ const GiftRanking = () => {
       <div css={gridStyle(theme)}>
         {products.map((item) => (
           <div key={item.id} css={cardStyle(theme)}>
-            <div css={rankBadge(theme, item.id)}>{item.id}</div>
+            <div css={rankBadge}>{item.id}</div>
             <img src={item.image} alt={item.name} css={imageStyle(theme)} />
             <div css={brandStyle(theme)}>{item.brand}</div>
             <div css={nameStyle}>{item.name}</div>

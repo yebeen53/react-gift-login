@@ -1,5 +1,5 @@
 import GlobalStyles from '@/emotionstyle';
-import Navibar from '@/navigation';
+import Navibar from '@/Navibar';
 import SelectCategory from '@/selectCategory';
 import Banner from '@/Banner';
 import GiftRanking from '@/giftRanking';
