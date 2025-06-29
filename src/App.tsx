@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import './App.css'
+import GlobalStyles from '@/GlobalStyles';
+import Navibar from '@/Navibar';
+import GiftThemeSection from '@/GiftThemeSection';
+import Banner from '@/Banner';
+import GiftRanking from '@/GiftRanking';
+import SelectFr from '@/SelectFr';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h1>Vite + React</h1>
-      <button onClick={() => setCount(count + 1)}>
-        count is {count}
-      </button>
+      <GlobalStyles/>
+      <Navibar/>
+      <SelectFr/>
+      <GiftThemeSection />
+      <Banner/>
+      <GiftRanking/>
     </>
   )
 }
