@@ -3,7 +3,7 @@ import useCustomTheme from './useCustomTheme';
 import type { Theme } from '@/theme';
 import { useSearchParams } from 'react-router-dom';
 import Button from '@/Button';
-
+import GiftItem from '@/GiftItem';
 const tabs = ['전체', '여성이', '남성이', '청소년이'];
 const subTabs = ['받고 싶어한', '많이 선물한', '위시로 받은'];
 
@@ -46,52 +46,7 @@ grid-template-columns: repeat(3, 1fr);
 gap: ${theme.spacing.spacing4};
 `;
 
-const cardStyle = (theme:Theme)=>css`
-position: relative;
-border-radius: 8px;
-overflow: hidden;
-background: white;
-padding: ${theme.spacing.spacing2};
-text-align: center;
-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-`;
 
-const rankBadge = () => css`
-position: absolute;
-top: 8px;
-left: 8px;
-background-color: red;
-color: white;
-font-size: 12px;
-width: 24px;
-height: 24px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: bold;
-`;
-
-const imageStyle = (theme:Theme)=>css`
-width: 100%;
-height: auto;
-margin-bottom: ${theme.spacing.spacing2};
-`;
-
-const brandStyle = (theme:Theme)=>css`
-font-size: 12px;
-color: ${theme.colors.gray400};
-`;
-
-const nameStyle = css`
-font-weight: 500;
-margin-top: 2px;
-`;
-
-const priceStyle = css`
-font-weight: bold;
-margin-top: 4px;
-`;
 const more=(theme:Theme)=>css`
 border:1px solid ${theme.colors.semantic.borderDefault};
 border-radius: 10px;
@@ -150,16 +105,19 @@ const GiftRanking = () => {
       </div>
 
       <div css={gridStyle(theme)}>
-        {products.map((item) => (
-          <div key={item.id} css={cardStyle(theme)}>
-            <div css={rankBadge}>{item.id}</div>
-            <img src={item.image} alt={item.name} css={imageStyle(theme)} />
-            <div css={brandStyle(theme)}>{item.brand}</div>
-            <div css={nameStyle}>{item.name}</div>
-            <div css={priceStyle}>{item.price.toLocaleString()} 원</div>
-          </div>
-        ))}
-      </div>
+  {products.map((item) => (
+    <GiftItem
+      key={item.id}
+      id={item.id}
+      brand={item.brand}
+      name={item.name}
+      price={item.price}
+      image={item.image}
+      theme={theme}
+    />
+  ))}
+</div>
+
 
       <div css={more(theme)}>더보기</div>
     </section>
