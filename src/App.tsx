@@ -28,7 +28,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/homepage/login" element={<Login />}></Route>
+        <Route path="/homepage/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
